@@ -15,7 +15,8 @@ public class DrawPanel extends JPanel {
         super.paint(gr);
         Graphics2D g = (Graphics2D) gr;
 
-        Saitama saitama = new Saitama(gr,220,120);
+        Saitama saitama = new Saitama(220,120, 220,300);
+        saitama.drawSaitama(g);
 
     }
 }
