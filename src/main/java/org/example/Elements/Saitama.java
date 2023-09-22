@@ -18,6 +18,7 @@ public class Saitama{
         Color firstColor = g.getColor();
         Color leaterColor = new Color(254,244,255);
 
+        //голова
         g.setColor(leaterColor);
         g.fillOval(x, y, w, h);
 
@@ -26,12 +27,25 @@ public class Saitama{
         g.setStroke(new BasicStroke(2));
         g.drawOval(x, y, w, h);
 
+        //Ухо
+        g.setColor(leaterColor);
         GeneralPath generalPath = new GeneralPath();
-        generalPath.moveTo(x + w - (w - 25),y + h - (h - 105));
-        generalPath.curveTo(x + w - (w - 15), y + h - (h - 77), x + w - (w + 10), y + h - (h - 77), x + w - (w + 15),y + h - (h - 144));
-        generalPath.moveTo(x + w - (w + 15), y + h - (h - 144));
-        generalPath.curveTo(x + w - (w + 15),y + h - (h - 200), x + w - (w - 10), y + h - (h - 180), x + w - (w - 3), y + h - (h - 185));
+        generalPath.moveTo((int)(x + 0.13 * w), (int)(y + 0.4 * h));
+        generalPath.curveTo((int)(x + 0.1 * w), (int)(y + 0.25 * h), (int)(x + -0.1 * w), (int)(y + 0.35 * h), (int)(x + -0.09 * w), (int)(y + 0.45 * h));
+        generalPath.curveTo((int)(x + -0.1 * w), (int)(y + 0.55 * h), (int)(x + -0.09 * w), (int)(y + 0.65 * h), (int)(x + 0.03 * w), (int)(y + 0.65 * h));
+        g.fill(generalPath);
 
+        g.setColor(firstColor);
+        generalPath.moveTo((int)(x + 0.13 * w), (int)(y + 0.4 * h));
+        generalPath.curveTo((int)(x + 0.1 * w), (int)(y + 0.25 * h), (int)(x + -0.1 * w), (int)(y + 0.35 * h), (int)(x + -0.09 * w), (int)(y + 0.45 * h));
+        generalPath.curveTo((int)(x + -0.1 * w), (int)(y + 0.55 * h), (int)(x + -0.09 * w), (int)(y + 0.65 * h), (int)(x + 0.03 * w), (int)(y + 0.65 * h));
+        g.draw(generalPath);
+
+        generalPath.moveTo((int)(x + -0.02 * w), (int)(y + 0.44 * h));
+        generalPath.curveTo((int)(x + -0.02 * w), (int)(y + 0.4 * h), (int)(x + 0.03 * w), (int)(y + 0.38 * h), (int)(x + 0.06 * w), (int)(y + 0.4 * h));
+        generalPath.curveTo((int)(x + 0.07 * w), (int)(y + 0.42 * h), (int)(x + 0.07 * w), (int)(y + 0.45 * h), (int)(x + 0.07 * w), (int)(y + 0.51 * h));
+        generalPath.lineTo((int)(x + -0.02 * w), (int)(y + 0.51 * h));
+        generalPath.curveTo((int)(x + -0.02 * w), (int)(y + 0.58 * h), (int)(x + 0.03 * w), (int)(y + 0.6 * h), (int)(x + 0.06 * w), (int)(y + 0.58 * h));
         g.draw(generalPath);
 
     }
