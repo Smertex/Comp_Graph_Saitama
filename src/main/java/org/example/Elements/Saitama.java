@@ -86,6 +86,17 @@ public class Saitama{
         eye.lineTo((int)(x + 0.7 * w), (int)(y + 0.31 * h));
         g.draw(eye);
 
+        //Нос
+        GeneralPath noseAndMouth = new GeneralPath();
+        noseAndMouth.moveTo((int)(x + 0.63 * w), (int)(y + 0.4 * h));
+        noseAndMouth.curveTo((int)(x + 0.62 * w), (int)(y + 0.46 * h), (int)(x + 0.68 * w), (int)(y + 0.53 * h), (int)(x + 0.63 * w), (int)(y + 0.56 * h));
+        g.fillOval((int)(x + 0.59 * w),(int)(y + 0.53 * h),(int)(w / 10 - 17),(int)(h / 10 - 25));
+
+        //Рот
+        noseAndMouth.moveTo((int)(x + 0.64 * w), (int)(y + 0.67 * h));
+        noseAndMouth.lineTo((int)(x + 0.54 * w), (int)(y + 0.67 * h));
+        g.draw(noseAndMouth);
+
     }
     private void setX(int x){
         this.x = x;
