@@ -18,7 +18,7 @@ public class Saitama{
         Color firstColor = g.getColor();
         Color leaterColor = new Color(254,244,255);
         Color eyeColor = new Color(254, 247, 254);
-        Color tightsColor = new Color(229, 174, 193);
+        Color tightsColor = new Color(229, 172, 189);
 
         //голова
         g.setColor(leaterColor);
@@ -136,6 +136,30 @@ public class Saitama{
 
         g.fill(сloakColor);
 
+       //Заливка тела
+       GeneralPath colorBody = new GeneralPath();
+       g.setColor(tightsColor);
+       colorBody.moveTo((int)(x + -0.09 * w), (int)(y + 1.48 * h));
+       colorBody.curveTo((int)(x + -0.09 * w), (int)(y + 1.47 * h), (int)(x + -0.12 * w), (int)(y + 1.33 * h), (int)(x + -0.08 * w), (int)(y + 1.18 * h));
+       colorBody.curveTo((int)(x + -0.08 * w), (int)(y + 1.18 * h), (int)(x + -0.01 * w), (int)(y + 1.17 * h), (int)(x + -0.01 * w), (int)(y + 1.18 * h));
+       colorBody.curveTo((int)(x + 0.19 * w), (int)(y + 1.29 * h), (int)(x + 0.21 * w), (int)(y + 1.29 * h), (int)(x + 0.19 * w), (int)(y + 1.29 * h));
+       colorBody.curveTo((int)(x + 0.39 * w), (int)(y + 1.28 * h), (int)(x + 0.49 * w), (int)(y + 1.27 * h), (int)(x + 0.38 * w), (int)(y + 1.15 * h));
+       colorBody.curveTo((int)(x + 0.52 * w), (int)(y + 1.26 * h), (int)(x + 0.74 * w), (int)(y + 1.18 * h), (int)(x + 0.74 * w), (int)(y + 1.12 * h));
+       colorBody.curveTo((int)(x + 0.74 * w), (int)(y + 1.12 * h), (int)(x + 0.74 * w), (int)(y + 1.12 * h), (int)(x + 0.74 * w), (int)(y + 1.12 * h));
+
+       colorBody.curveTo((int)(x + 0.71 * w), (int)(y + 1.1 * h), (int)(x + 0.76 * w), (int)(y + 1.14 * h), (int)(x + 0.8 * w), (int)(y + 1.18 * h));
+       colorBody.curveTo((int)(x + 0.9 * w), (int)(y + 1.24 * h), (int)(x + 0.92 * w), (int)(y + 1.22 * h), (int)(x + 1.02 * w), (int)(y + 1.18 * h));
+       colorBody.curveTo((int)(x + 1.05 * w), (int)(y + 1.14 * h), (int)(x + 1.05 * w), (int)(y + 1.14 * h), (int)(x + 1.05 * w), (int)(y + 1.14 * h));
+
+       colorBody.curveTo((int)(x + 1.08 * w), (int)(y + 1.25 * h), (int)(x + 1.07 * w), (int)(y + 1.35 * h), (int)(x + 1.15 * w), (int)(y + 1.48 * h));
+       colorBody.lineTo((int)(x + -0.09 * w), (int)(y + 1.48 * h));
+
+       //colorBody.curveTo((int)(x + 0.9 * w), (int)(y + 1.45 * h), (int)(x + 0.9 * w), (int)(y + 1.35 * h), (int)(x + 0.94 * w), (int)(y + 1.28 * h));
+
+       g.fill(colorBody);
+
+       g.setColor(firstColor);
+
         //Обводка правой части плаща
         GeneralPath сloakStroke = new GeneralPath();
         g.setColor(firstColor);
@@ -163,32 +187,22 @@ public class Saitama{
         сloakStroke.curveTo((int)(x + 0.8 * w), (int)(y + 1.19 * h), (int)(x + 0.76 * w), (int)(y + 1.16 * h), (int)(x + 0.71 * w), (int)(y + 1.08 * h));
         g.draw(сloakStroke);
 
-//        g.setColor(tightsColor);
-//
-//        //Правая рука заливка
-//        GeneralPath сolorHands = new GeneralPath();
-//        сolorHands.moveTo((int)(x + -0.08 * w), (int)(y + 1.18 * h));
-//        сolorHands.curveTo((int)(x + -0.08 * w), (int)(y + 1.27 * h), (int)(x + -0.12 * w), (int)(y + 1.33 * h), (int)(x + -0.09 * w), (int)(y + 1.47 * h));
-//        сolorHands.lineTo((int)(x + 0.1 * w), (int)(y + 1.48 * h));
-//        сolorHands.curveTo((int)(x + 0.1 * w), (int)(y + 1.48 * h), (int)(x + 0.14 * w), (int)(y + 1.36 * h), (int)(x + 0.11 * w), (int)(y + 1.25 * h));
-//
-//        //Левая рука заливка
-//
-//        сolorHands.moveTo((int)(x + 1.047 * w), (int)(y + 1.15 * h));
-//        сolorHands.curveTo((int)(x + 1.08 * w), (int)(y + 1.25 * h), (int)(x + 1.07 * w), (int)(y + 1.35 * h), (int)(x + 1.15 * w), (int)(y + 1.48 * h));
-//        сolorHands.lineTo((int)(x + 0.9 * w), (int)(y + 1.48 * h));
-//        сolorHands.curveTo((int)(x + 0.9 * w), (int)(y + 1.45 * h), (int)(x + 0.9 * w), (int)(y + 1.35 * h), (int)(x + 0.94 * w), (int)(y + 1.28 * h));
-//        g.fill(сolorHands);
-//
-//        g.setColor(firstColor);
+        //Правая рука заливка
+        GeneralPath сolorHands = new GeneralPath();
+        сolorHands.moveTo((int)(x + -0.08 * w), (int)(y + 1.18 * h));
+        сolorHands.curveTo((int)(x + -0.08 * w), (int)(y + 1.27 * h), (int)(x + -0.12 * w), (int)(y + 1.33 * h), (int)(x + -0.09 * w), (int)(y + 1.47 * h));
+        сolorHands.lineTo((int)(x + 0.1 * w), (int)(y + 1.48 * h));
+        сolorHands.curveTo((int)(x + 0.1 * w), (int)(y + 1.48 * h), (int)(x + 0.14 * w), (int)(y + 1.36 * h), (int)(x + 0.11 * w), (int)(y + 1.25 * h));
 
-//        //Заливка тела
-//        GeneralPath colorBody = new GeneralPath();
-//        g.setColor(tightsColor);
-//        colorBody.moveTo((int)(x + -0.09 * w), (int)(y + 1.47 * h));
-//        colorBody.curveTo((int)(x + -0.09 * w), (int)(y + 1.47 * h), (int)(x + -0.12 * w), (int)(y + 1.33 * h), (int)(x + -0.08 * w), (int)(y + 1.18 * h));
-//
-//        g.draw(colorBody);
+        //Левая рука заливка
+
+        сolorHands.moveTo((int)(x + 1.047 * w), (int)(y + 1.15 * h));
+        сolorHands.curveTo((int)(x + 1.08 * w), (int)(y + 1.25 * h), (int)(x + 1.07 * w), (int)(y + 1.35 * h), (int)(x + 1.15 * w), (int)(y + 1.48 * h));
+        сolorHands.lineTo((int)(x + 0.9 * w), (int)(y + 1.48 * h));
+        сolorHands.curveTo((int)(x + 0.9 * w), (int)(y + 1.45 * h), (int)(x + 0.9 * w), (int)(y + 1.35 * h), (int)(x + 0.94 * w), (int)(y + 1.28 * h));
+        g.draw(сolorHands);
+
+
     }
     private void setX(int x){
         this.x = x;
