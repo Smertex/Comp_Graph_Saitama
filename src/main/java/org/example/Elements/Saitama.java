@@ -16,6 +16,7 @@ public class Saitama{
     }
     public void drawSaitama(Graphics2D g){
         BasicStroke firstStroke = (BasicStroke) g.getStroke();
+        g.setStroke(new BasicStroke(2));
 
         Color firstColor = g.getColor();
         Color leaterColor = new Color(254,244,255);
@@ -35,11 +36,9 @@ public class Saitama{
         neck.lineTo((int)(x + 0.31 * w), (int)(y + 1.1 * h));
         neck.curveTo((int)(x + 0.42 * w), (int)(y + 1.24 * h), (int)(x + 0.42 * w), (int)(y + 1.19 * h), (int)(x + 0.38 * w), (int)(y + 1.15 * h));
         neck.curveTo((int)(x + 0.51 * w), (int)(y + 1.27 * h), (int)(x + 0.7 * w), (int)(y + 1.2 * h), (int)(x + 0.75 * w), (int)(y + 1.1 * h));;
-
         g.fill(neck);
 
         g.setColor(firstColor);
-        g.setStroke(new BasicStroke(2));
         g.drawOval(x, y, w, h);
 
         //Ухо
@@ -49,19 +48,6 @@ public class Saitama{
         ear.curveTo((int)(x + 0.1 * w), (int)(y + 0.25 * h), (int)(x + -0.1 * w), (int)(y + 0.35 * h), (int)(x + -0.09 * w), (int)(y + 0.45 * h));
         ear.curveTo((int)(x + -0.1 * w), (int)(y + 0.55 * h), (int)(x + -0.09 * w), (int)(y + 0.65 * h), (int)(x + 0.03 * w), (int)(y + 0.65 * h));
         g.fill(ear);
-
-        g.setColor(firstColor);
-        ear.moveTo((int)(x + 0.13 * w), (int)(y + 0.4 * h));
-        ear.curveTo((int)(x + 0.1 * w), (int)(y + 0.25 * h), (int)(x + -0.1 * w), (int)(y + 0.35 * h), (int)(x + -0.09 * w), (int)(y + 0.45 * h));
-        ear.curveTo((int)(x + -0.1 * w), (int)(y + 0.55 * h), (int)(x + -0.09 * w), (int)(y + 0.65 * h), (int)(x + 0.03 * w), (int)(y + 0.65 * h));
-        g.draw(ear);
-
-        ear.moveTo((int)(x + -0.02 * w), (int)(y + 0.44 * h));
-        ear.curveTo((int)(x + -0.02 * w), (int)(y + 0.4 * h), (int)(x + 0.03 * w), (int)(y + 0.38 * h), (int)(x + 0.06 * w), (int)(y + 0.4 * h));
-        ear.curveTo((int)(x + 0.07 * w), (int)(y + 0.42 * h), (int)(x + 0.07 * w), (int)(y + 0.45 * h), (int)(x + 0.07 * w), (int)(y + 0.51 * h));
-        ear.lineTo((int)(x + -0.02 * w), (int)(y + 0.51 * h));
-        ear.curveTo((int)(x + -0.02 * w), (int)(y + 0.58 * h), (int)(x + 0.03 * w), (int)(y + 0.6 * h), (int)(x + 0.06 * w), (int)(y + 0.58 * h));
-        g.draw(ear);
 
         //Глаза
         GeneralPath eye = new GeneralPath();
@@ -79,7 +65,6 @@ public class Saitama{
         g.fill(eye);
 
         g.setColor(firstColor);
-
         g.fillOval((int)(x + 0.82 * w),(int)(y + 0.35 * h), (int)(w / 10 - 17),(int)(h / 10 - 25));
         g.fillOval((int)(x + 0.42 * w),(int)(y + 0.35 * h),(int)(w / 10 - 17),(int)(h / 10 - 25));
 
@@ -110,7 +95,6 @@ public class Saitama{
         сloakColor.curveTo((int)(x + 1.03 * w), (int)(y + 1.09 * h), (int)(x + 1.04 * w), (int)(y + 1.1 * h), (int)(x + 1.05 * w), (int)(y + 1.14 * h));
         сloakColor.curveTo((int)(x + 1.02 * w), (int)(y + 1.21 * h), (int)(x + 0.9 * w), (int)(y + 1.22 * h), (int)(x + 0.9 * w), (int)(y + 1.22 * h));
         сloakColor.curveTo((int)(x + 0.8 * w), (int)(y + 1.19 * h), (int)(x + 0.76 * w), (int)(y + 1.16 * h), (int)(x + 0.71 * w), (int)(y + 1.08 * h));
-
         g.fill(сloakColor);
 
        //Заливка тела
@@ -132,10 +116,8 @@ public class Saitama{
        colorBody.lineTo((int)(x + -0.09 * w), (int)(y + 1.48 * h));
 
        g.fill(colorBody);
-       g.setColor(firstColor);
 
         //Заливка воротника
-
         GeneralPath collar = new GeneralPath();
         g.setColor(Color.WHITE);
         collar.moveTo((int)(x + 0.42 * w), (int)(y + 1.24 * h));
@@ -150,11 +132,30 @@ public class Saitama{
         collar.curveTo((int)(x + 0.38 * w), (int)(y + 1.15 * h), (int)(x + 0.42 * w), (int)(y + 1.19 * h), (int)(x + 0.42 * w), (int)(y + 1.24 * h));
         g.fill(collar);
 
-        //ОБВОДКА
+        //Заливка пуговиц на плаще
+        g.setColor(button);
 
-        //Обводка правой части плаща
+        g.fillOval((int)(x + 0.82 * w),(int)(y + 1.1 * h), (int)(w / 5 - 17),(int)(h / 6 - 25));
+        g.fillOval((int)(x + 0.22 * w),(int)(y + 1.17 * h), (int)(w / 5 - 17),(int)(h / 6 - 25));
+
+        //ОБВОДКА
         GeneralPath stroke = new GeneralPath();
         g.setColor(firstColor);
+
+        //Обводка уха
+        stroke.moveTo((int)(x + 0.13 * w), (int)(y + 0.4 * h));
+        stroke.curveTo((int)(x + 0.1 * w), (int)(y + 0.25 * h), (int)(x + -0.1 * w), (int)(y + 0.35 * h), (int)(x + -0.09 * w), (int)(y + 0.45 * h));
+        stroke.curveTo((int)(x + -0.1 * w), (int)(y + 0.55 * h), (int)(x + -0.09 * w), (int)(y + 0.65 * h), (int)(x + 0.03 * w), (int)(y + 0.65 * h));
+        g.draw(stroke);
+
+        stroke.moveTo((int)(x + -0.02 * w), (int)(y + 0.44 * h));
+        stroke.curveTo((int)(x + -0.02 * w), (int)(y + 0.4 * h), (int)(x + 0.03 * w), (int)(y + 0.38 * h), (int)(x + 0.06 * w), (int)(y + 0.4 * h));
+        stroke.curveTo((int)(x + 0.07 * w), (int)(y + 0.42 * h), (int)(x + 0.07 * w), (int)(y + 0.45 * h), (int)(x + 0.07 * w), (int)(y + 0.51 * h));
+        stroke.lineTo((int)(x + -0.02 * w), (int)(y + 0.51 * h));
+        stroke.curveTo((int)(x + -0.02 * w), (int)(y + 0.58 * h), (int)(x + 0.03 * w), (int)(y + 0.6 * h), (int)(x + 0.06 * w), (int)(y + 0.58 * h));
+        g.draw(stroke);
+
+        //Обводка правой части плаща
         stroke.moveTo((int)(x + 0.31 * w), (int)(y + 1.04 * h));
         stroke.curveTo((int)(x + 0.23 * w), (int)(y + 1.05 * h), (int)(x + 0.24 * w), (int)(y + 1.06 * h), (int)(x + 0.24 * w), (int)(y + 1.09 * h));
         stroke.curveTo((int)(x + 0.15 * w), (int)(y + 1.09 * h), (int)(x + 0.15 * w), (int)(y + 1.09 * h), (int)(x + 0.12 * w), (int)(y + 1.13 * h));
@@ -190,7 +191,6 @@ public class Saitama{
         stroke.curveTo((int)(x + 0.9 * w), (int)(y + 1.45 * h), (int)(x + 0.9 * w), (int)(y + 1.35 * h), (int)(x + 0.94 * w), (int)(y + 1.28 * h));
 
         //Обводка воротника
-
         stroke.moveTo((int)(x + 0.42 * w), (int)(y + 1.24 * h));
         stroke.curveTo((int)(x + 0.44 * w), (int)(y + 1.26 * h),(int)(x + 0.47 * w), (int)(y + 1.27 * h), (int)(x + 0.53 * w), (int)(y + 1.27 * h));
         stroke.lineTo((int)(x + 0.53 * w), (int)(y + 1.48 * h));
@@ -202,20 +202,11 @@ public class Saitama{
         stroke.curveTo((int)(x + 0.74 * w), (int)(y + 1.12 * h), (int)(x + 0.62 * w), (int)(y + 1.28 * h), (int)(x + 0.38 * w), (int)(y + 1.15 * h));
         stroke.curveTo((int)(x + 0.38 * w), (int)(y + 1.15 * h), (int)(x + 0.42 * w), (int)(y + 1.19 * h), (int)(x + 0.42 * w), (int)(y + 1.24 * h));
 
-        //Пуговицы на плаще
-
-        g.setColor(button);
-
-        g.fillOval((int)(x + 0.82 * w),(int)(y + 1.1 * h), (int)(w / 5 - 17),(int)(h / 6 - 25));
-        g.fillOval((int)(x + 0.22 * w),(int)(y + 1.17 * h), (int)(w / 5 - 17),(int)(h / 6 - 25));
-
-        g.setColor(firstColor);
-
+        //Обводка пуговиц
         g.drawOval((int)(x + 0.82 * w),(int)(y + 1.1 * h), (int)(w / 5 - 17),(int)(h / 6 - 25));
         g.drawOval((int)(x + 0.22 * w),(int)(y + 1.17 * h), (int)(w / 5 - 17),(int)(h / 6 - 25));
 
         //Складки на одежде
-
         stroke.moveTo((int)(x + 0.24 * w), (int)(y + 1.09 * h));
         stroke.curveTo((int)(x + 0.32 * w), (int)(y + 1.18 * h), (int)(x + 0.32 * w), (int)(y + 1.18 * h), (int)(x + 0.32 * w), (int)(y + 1.18 * h));
 
@@ -277,8 +268,6 @@ public class Saitama{
         stroke.lineTo((int)(x + 0.31 * w), (int)(y + 1.1 * h));
 
         g.draw(stroke);
-
-
     }
     private void setX(int x){
         this.x = x;
