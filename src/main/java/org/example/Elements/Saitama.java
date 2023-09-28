@@ -157,45 +157,73 @@ public class Saitama{
        g.fill(colorBody);
        g.setColor(firstColor);
 
-        //Обводка правой части плаща
-        GeneralPath сloakStroke = new GeneralPath();
-        g.setColor(firstColor);
-        сloakStroke.moveTo((int)(x + 0.31 * w), (int)(y + 1.04 * h));
-        сloakStroke.curveTo((int)(x + 0.23 * w), (int)(y + 1.05 * h), (int)(x + 0.24 * w), (int)(y + 1.06 * h), (int)(x + 0.24 * w), (int)(y + 1.09 * h));
-        сloakStroke.curveTo((int)(x + 0.15 * w), (int)(y + 1.09 * h), (int)(x + 0.15 * w), (int)(y + 1.09 * h), (int)(x + 0.12 * w), (int)(y + 1.13 * h));
-        сloakStroke.curveTo((int)(x + 0.04 * w), (int)(y + 1.13 * h), (int)(x + 0.04 * w), (int)(y + 1.13 * h), (int)(x + 0.01 * w), (int)(y + 1.15 * h));
-        сloakStroke.curveTo((int)(x + 0.04 * w), (int)(y + 1.13 * h), (int)(x + 0.04 * w), (int)(y + 1.13 * h), (int)(x + 0.01 * w), (int)(y + 1.15 * h));
-        сloakStroke.curveTo((int)(x + -0.05 * w), (int)(y + 1.15 * h), (int)(x + -0.05 * w), (int)(y + 1.15 * h), (int)(x + -0.08 * w), (int)(y + 1.18 * h));
-        сloakStroke.lineTo((int)(x + -0.3 * w), (int)(y + 1.47 * h));
+        //Заливка воротника
 
-        сloakStroke.moveTo((int)(x + 0.31 * w), (int)(y + 1.1 * h));
-        сloakStroke.curveTo((int)(x + 0.41 * w), (int)(y + 1.15 * h), (int)(x + 0.45 * w), (int)(y + 1.24 * h), (int)(x + 0.39 * w), (int)(y + 1.27 * h));
-        сloakStroke.curveTo((int)(x + 0.19 * w), (int)(y + 1.29 * h), (int)(x + 0.19 * w), (int)(y + 1.29 * h), (int)(x + 0.19 * w), (int)(y + 1.29 * h));
-        сloakStroke.curveTo((int)(x + -0.05 * w), (int)(y + 1.16 * h), (int)(x + -0.01 * w), (int)(y + 1.16 * h), (int)(x + -0.08 * w), (int)(y + 1.18 * h));
+        GeneralPath collar = new GeneralPath();
+        g.setColor(Color.WHITE);
+        collar.moveTo((int)(x + 0.42 * w), (int)(y + 1.24 * h));
+        collar.curveTo((int)(x + 0.44 * w), (int)(y + 1.26 * h),(int)(x + 0.47 * w), (int)(y + 1.27 * h), (int)(x + 0.53 * w), (int)(y + 1.27 * h));
+        collar.lineTo((int)(x + 0.53 * w), (int)(y + 1.48 * h));
+        collar.lineTo((int)(x + 0.69 * w), (int)(y + 1.48 * h));
+        collar.lineTo((int)(x + 0.69 * w), (int)(y + 1.27 * h));
+        collar.curveTo((int)(x + 0.8 * w), (int)(y + 1.24 * h), (int)(x + 0.8 * w), (int)(y + 1.2 * h), (int)(x + 0.81 * w), (int)(y + 1.19 * h));
+        collar.curveTo((int)(x + 0.8 * w), (int)(y + 1.17 * h), (int)(x + 0.77 * w), (int)(y + 1.17 * h), (int)(x + 0.74 * w), (int)(y + 1.12 * h));
+        collar.curveTo((int)(x + 0.74 * w), (int)(y + 1.12 * h), (int)(x + 0.74 * w), (int)(y + 1.12 * h), (int)(x + 0.74 * w), (int)(y + 1.12 * h));
+        collar.curveTo((int)(x + 0.74 * w), (int)(y + 1.12 * h), (int)(x + 0.62 * w), (int)(y + 1.28 * h), (int)(x + 0.38 * w), (int)(y + 1.15 * h));
+        collar.curveTo((int)(x + 0.38 * w), (int)(y + 1.15 * h), (int)(x + 0.42 * w), (int)(y + 1.19 * h), (int)(x + 0.42 * w), (int)(y + 1.24 * h));
+        g.fill(collar);
+
+        //ОБВОДКА
+
+        //Обводка правой части плаща
+        GeneralPath stroke = new GeneralPath();
+        g.setColor(firstColor);
+        stroke.moveTo((int)(x + 0.31 * w), (int)(y + 1.04 * h));
+        stroke.curveTo((int)(x + 0.23 * w), (int)(y + 1.05 * h), (int)(x + 0.24 * w), (int)(y + 1.06 * h), (int)(x + 0.24 * w), (int)(y + 1.09 * h));
+        stroke.curveTo((int)(x + 0.15 * w), (int)(y + 1.09 * h), (int)(x + 0.15 * w), (int)(y + 1.09 * h), (int)(x + 0.12 * w), (int)(y + 1.13 * h));
+        stroke.curveTo((int)(x + 0.04 * w), (int)(y + 1.13 * h), (int)(x + 0.04 * w), (int)(y + 1.13 * h), (int)(x + 0.01 * w), (int)(y + 1.15 * h));
+        stroke.curveTo((int)(x + 0.04 * w), (int)(y + 1.13 * h), (int)(x + 0.04 * w), (int)(y + 1.13 * h), (int)(x + 0.01 * w), (int)(y + 1.15 * h));
+        stroke.curveTo((int)(x + -0.05 * w), (int)(y + 1.15 * h), (int)(x + -0.05 * w), (int)(y + 1.15 * h), (int)(x + -0.08 * w), (int)(y + 1.18 * h));
+        stroke.lineTo((int)(x + -0.3 * w), (int)(y + 1.47 * h));
+
+        stroke.moveTo((int)(x + 0.31 * w), (int)(y + 1.1 * h));
+        stroke.curveTo((int)(x + 0.41 * w), (int)(y + 1.15 * h), (int)(x + 0.45 * w), (int)(y + 1.24 * h), (int)(x + 0.39 * w), (int)(y + 1.27 * h));
+        stroke.curveTo((int)(x + 0.19 * w), (int)(y + 1.29 * h), (int)(x + 0.19 * w), (int)(y + 1.29 * h), (int)(x + 0.19 * w), (int)(y + 1.29 * h));
+        stroke.curveTo((int)(x + -0.05 * w), (int)(y + 1.16 * h), (int)(x + -0.01 * w), (int)(y + 1.16 * h), (int)(x + -0.08 * w), (int)(y + 1.18 * h));
 
         //Обводка левой части плаща
-        сloakStroke.moveTo((int)(x + 0.71 * w), (int)(y + 1.01 * h));
-        сloakStroke.curveTo((int)(x + 0.79 * w), (int)(y + 1.01 * h), (int)(x + 0.79 * w), (int)(y + 1.04 * h), (int)(x + 0.81 * w), (int)(y + 1.04 * h));
-        сloakStroke.curveTo((int)(x + 0.84 * w), (int)(y + 1.02 * h), (int)(x + 0.86 * w), (int)(y + 1.02 * h), (int)(x + 0.9 * w), (int)(y + 1.05 * h));
-        сloakStroke.curveTo((int)(x + 0.95 * w), (int)(y + 1.05 * h), (int)(x + 0.96 * w), (int)(y + 1.08 * h), (int)(x + 0.98 * w), (int)(y + 1.09 * h));
-        сloakStroke.curveTo((int)(x + 1.03 * w), (int)(y + 1.09 * h), (int)(x + 1.04 * w), (int)(y + 1.1 * h), (int)(x + 1.05 * w), (int)(y + 1.14 * h));
-        сloakStroke.curveTo((int)(x + 1.02 * w), (int)(y + 1.21 * h), (int)(x + 0.9 * w), (int)(y + 1.22 * h), (int)(x + 0.9 * w), (int)(y + 1.22 * h));
-        сloakStroke.curveTo((int)(x + 0.8 * w), (int)(y + 1.19 * h), (int)(x + 0.76 * w), (int)(y + 1.16 * h), (int)(x + 0.71 * w), (int)(y + 1.08 * h));
-        g.draw(сloakStroke);
+        stroke.moveTo((int)(x + 0.71 * w), (int)(y + 1.01 * h));
+        stroke.curveTo((int)(x + 0.79 * w), (int)(y + 1.01 * h), (int)(x + 0.79 * w), (int)(y + 1.04 * h), (int)(x + 0.81 * w), (int)(y + 1.04 * h));
+        stroke.curveTo((int)(x + 0.84 * w), (int)(y + 1.02 * h), (int)(x + 0.86 * w), (int)(y + 1.02 * h), (int)(x + 0.9 * w), (int)(y + 1.05 * h));
+        stroke.curveTo((int)(x + 0.95 * w), (int)(y + 1.05 * h), (int)(x + 0.96 * w), (int)(y + 1.08 * h), (int)(x + 0.98 * w), (int)(y + 1.09 * h));
+        stroke.curveTo((int)(x + 1.03 * w), (int)(y + 1.09 * h), (int)(x + 1.04 * w), (int)(y + 1.1 * h), (int)(x + 1.05 * w), (int)(y + 1.14 * h));
+        stroke.curveTo((int)(x + 1.02 * w), (int)(y + 1.21 * h), (int)(x + 0.9 * w), (int)(y + 1.22 * h), (int)(x + 0.9 * w), (int)(y + 1.22 * h));
+        stroke.curveTo((int)(x + 0.8 * w), (int)(y + 1.19 * h), (int)(x + 0.76 * w), (int)(y + 1.16 * h), (int)(x + 0.71 * w), (int)(y + 1.08 * h));
 
         //Правая рука обводка
-        GeneralPath hands = new GeneralPath();
-        hands.moveTo((int)(x + -0.08 * w), (int)(y + 1.18 * h));
-        hands.curveTo((int)(x + -0.08 * w), (int)(y + 1.27 * h), (int)(x + -0.12 * w), (int)(y + 1.33 * h), (int)(x + -0.09 * w), (int)(y + 1.47 * h));
-        hands.lineTo((int)(x + 0.1 * w), (int)(y + 1.48 * h));
-        hands.curveTo((int)(x + 0.1 * w), (int)(y + 1.48 * h), (int)(x + 0.14 * w), (int)(y + 1.36 * h), (int)(x + 0.11 * w), (int)(y + 1.25 * h));
+        stroke.moveTo((int)(x + -0.08 * w), (int)(y + 1.18 * h));
+        stroke.curveTo((int)(x + -0.08 * w), (int)(y + 1.27 * h), (int)(x + -0.12 * w), (int)(y + 1.33 * h), (int)(x + -0.09 * w), (int)(y + 1.47 * h));
+        stroke.lineTo((int)(x + 0.1 * w), (int)(y + 1.48 * h));
+        stroke.curveTo((int)(x + 0.1 * w), (int)(y + 1.48 * h), (int)(x + 0.14 * w), (int)(y + 1.36 * h), (int)(x + 0.11 * w), (int)(y + 1.25 * h));
 
         //Левая рука обводка
-        hands.moveTo((int)(x + 1.047 * w), (int)(y + 1.15 * h));
-        hands.curveTo((int)(x + 1.08 * w), (int)(y + 1.25 * h), (int)(x + 1.07 * w), (int)(y + 1.35 * h), (int)(x + 1.15 * w), (int)(y + 1.48 * h));
-        hands.lineTo((int)(x + 0.9 * w), (int)(y + 1.48 * h));
-        hands.curveTo((int)(x + 0.9 * w), (int)(y + 1.45 * h), (int)(x + 0.9 * w), (int)(y + 1.35 * h), (int)(x + 0.94 * w), (int)(y + 1.28 * h));
-        g.draw(hands);
+        stroke.moveTo((int)(x + 1.047 * w), (int)(y + 1.15 * h));
+        stroke.curveTo((int)(x + 1.08 * w), (int)(y + 1.25 * h), (int)(x + 1.07 * w), (int)(y + 1.35 * h), (int)(x + 1.15 * w), (int)(y + 1.48 * h));
+        stroke.lineTo((int)(x + 0.9 * w), (int)(y + 1.48 * h));
+        stroke.curveTo((int)(x + 0.9 * w), (int)(y + 1.45 * h), (int)(x + 0.9 * w), (int)(y + 1.35 * h), (int)(x + 0.94 * w), (int)(y + 1.28 * h));
+
+        //Обводка воротника
+
+        stroke.moveTo((int)(x + 0.42 * w), (int)(y + 1.24 * h));
+        stroke.curveTo((int)(x + 0.44 * w), (int)(y + 1.26 * h),(int)(x + 0.47 * w), (int)(y + 1.27 * h), (int)(x + 0.53 * w), (int)(y + 1.27 * h));
+        stroke.lineTo((int)(x + 0.53 * w), (int)(y + 1.48 * h));
+        stroke.lineTo((int)(x + 0.69 * w), (int)(y + 1.48 * h));
+        stroke.lineTo((int)(x + 0.69 * w), (int)(y + 1.27 * h));
+        stroke.curveTo((int)(x + 0.8 * w), (int)(y + 1.24 * h), (int)(x + 0.8 * w), (int)(y + 1.2 * h), (int)(x + 0.81 * w), (int)(y + 1.19 * h));
+        stroke.curveTo((int)(x + 0.8 * w), (int)(y + 1.17 * h), (int)(x + 0.77 * w), (int)(y + 1.17 * h), (int)(x + 0.74 * w), (int)(y + 1.12 * h));
+        stroke.curveTo((int)(x + 0.74 * w), (int)(y + 1.12 * h), (int)(x + 0.74 * w), (int)(y + 1.12 * h), (int)(x + 0.74 * w), (int)(y + 1.12 * h));
+        stroke.curveTo((int)(x + 0.74 * w), (int)(y + 1.12 * h), (int)(x + 0.62 * w), (int)(y + 1.28 * h), (int)(x + 0.38 * w), (int)(y + 1.15 * h));
+        stroke.curveTo((int)(x + 0.38 * w), (int)(y + 1.15 * h), (int)(x + 0.42 * w), (int)(y + 1.19 * h), (int)(x + 0.42 * w), (int)(y + 1.24 * h));
 
         //Пуговицы на плаще
 
@@ -211,35 +239,34 @@ public class Saitama{
 
         //Складки на одежде
 
-        GeneralPath folds = new GeneralPath();
-        folds.moveTo((int)(x + 0.24 * w), (int)(y + 1.09 * h));
-        folds.curveTo((int)(x + 0.32 * w), (int)(y + 1.18 * h), (int)(x + 0.32 * w), (int)(y + 1.18 * h), (int)(x + 0.32 * w), (int)(y + 1.18 * h));
+        stroke.moveTo((int)(x + 0.24 * w), (int)(y + 1.09 * h));
+        stroke.curveTo((int)(x + 0.32 * w), (int)(y + 1.18 * h), (int)(x + 0.32 * w), (int)(y + 1.18 * h), (int)(x + 0.32 * w), (int)(y + 1.18 * h));
 
-        folds.moveTo((int)(x + 0.26 * w),(int)(y + 1.17 * h));
-        folds.lineTo((int)(x + 0.24 * w),(int)(y + 1.15 * h));
+        stroke.moveTo((int)(x + 0.26 * w),(int)(y + 1.17 * h));
+        stroke.lineTo((int)(x + 0.24 * w),(int)(y + 1.15 * h));
 
-        folds.moveTo((int)(x + 0.18 * w),(int)(y + 1.14 * h));
-        folds.lineTo((int)(x + 0.24 * w),(int)(y + 1.18 * h));
+        stroke.moveTo((int)(x + 0.18 * w),(int)(y + 1.14 * h));
+        stroke.lineTo((int)(x + 0.24 * w),(int)(y + 1.18 * h));
 
-        folds.moveTo((int)(x + 0.22 * w),(int)(y + 1.21 * h));
-        folds.lineTo((int)(x + 0.01 * w),(int)(y + 1.15 * h));
+        stroke.moveTo((int)(x + 0.22 * w),(int)(y + 1.21 * h));
+        stroke.lineTo((int)(x + 0.01 * w),(int)(y + 1.15 * h));
 
-        folds.moveTo((int)(x + 0.81 * w),(int)(y + 1.04 * h));
-        folds.curveTo((int)(x + 0.86 * w),(int)(y + 1.06 * h), (int)(x + 0.86 * w),(int)(y + 1.08 * h), (int)(x + 0.85 * w),(int)(y + 1.1 * h));
+        stroke.moveTo((int)(x + 0.81 * w),(int)(y + 1.04 * h));
+        stroke.curveTo((int)(x + 0.86 * w),(int)(y + 1.06 * h), (int)(x + 0.86 * w),(int)(y + 1.08 * h), (int)(x + 0.85 * w),(int)(y + 1.1 * h));
 
-        folds.moveTo((int)(x + 0.9 * w), (int)(y + 1.05 * h));
-        folds.curveTo((int)(x + 0.9 * w), (int)(y + 1.07 * h), (int)(x + 0.91 * w), (int)(y + 1.07 * h), (int)(x + 0.9 * w), (int)(y + 1.1 * h));
+        stroke.moveTo((int)(x + 0.9 * w), (int)(y + 1.05 * h));
+        stroke.curveTo((int)(x + 0.9 * w), (int)(y + 1.07 * h), (int)(x + 0.91 * w), (int)(y + 1.07 * h), (int)(x + 0.9 * w), (int)(y + 1.1 * h));
 
-        folds.moveTo((int)(x + 0.95 * w), (int)(y + 1.07 * h));
-        folds.lineTo((int)(x + 0.96 * w), (int)(y + 1.11 * h));
+        stroke.moveTo((int)(x + 0.95 * w), (int)(y + 1.07 * h));
+        stroke.lineTo((int)(x + 0.96 * w), (int)(y + 1.11 * h));
 
-        folds.moveTo((int)(x + 0.94 * w), (int)(y + 1.16 * h));
-        folds.lineTo((x + w), (int)(y + 1.12 * h));
+        stroke.moveTo((int)(x + 0.94 * w), (int)(y + 1.16 * h));
+        stroke.lineTo((x + w), (int)(y + 1.12 * h));
 
-        folds.moveTo((int)(x + 0.91 * w), (int)(y + 1.38 * h));
-        folds.curveTo((int)(x + 0.95 * w), (int)(y + 1.33 * h), (int)(x + 0.94 * w), (int)(y + 1.31 * h), (int)(x + 0.99 * w), (int)(y + 1.29 * h));
+        stroke.moveTo((int)(x + 0.91 * w), (int)(y + 1.38 * h));
+        stroke.curveTo((int)(x + 0.95 * w), (int)(y + 1.33 * h), (int)(x + 0.94 * w), (int)(y + 1.31 * h), (int)(x + 0.99 * w), (int)(y + 1.29 * h));
 
-        g.draw(folds);
+        g.draw(stroke);
 
 
     }
