@@ -154,8 +154,6 @@ public class Saitama{
        colorBody.curveTo((int)(x + 1.08 * w), (int)(y + 1.25 * h), (int)(x + 1.07 * w), (int)(y + 1.35 * h), (int)(x + 1.15 * w), (int)(y + 1.48 * h));
        colorBody.lineTo((int)(x + -0.09 * w), (int)(y + 1.48 * h));
 
-       //colorBody.curveTo((int)(x + 0.9 * w), (int)(y + 1.45 * h), (int)(x + 0.9 * w), (int)(y + 1.35 * h), (int)(x + 0.94 * w), (int)(y + 1.28 * h));
-
        g.fill(colorBody);
 
        g.setColor(firstColor);
