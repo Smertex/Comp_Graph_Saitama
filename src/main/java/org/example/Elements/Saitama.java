@@ -15,6 +15,8 @@ public class Saitama{
         setH(h);
     }
     public void drawSaitama(Graphics2D g){
+        BasicStroke firstStroke = (BasicStroke) g.getStroke();
+
         Color firstColor = g.getColor();
         Color leaterColor = new Color(254,244,255);
         Color eyeColor = new Color(254, 247, 254);
@@ -25,7 +27,17 @@ public class Saitama{
         g.setColor(leaterColor);
         g.fillOval(x, y, w, h);
 
-        BasicStroke firstStroke = (BasicStroke) g.getStroke();
+        //Шея
+        GeneralPath neck = new GeneralPath();
+        neck.moveTo((int)(x + 0.71 * w), (int)(y + 1.1 * h));
+        neck.lineTo((int)(x + 0.71 * w), (int)(y + 0.96 * h));
+        neck.lineTo((int)(x + 0.31 * w), (int)(y + 0.96 * h));
+        neck.lineTo((int)(x + 0.31 * w), (int)(y + 1.1 * h));
+        neck.curveTo((int)(x + 0.42 * w), (int)(y + 1.24 * h), (int)(x + 0.42 * w), (int)(y + 1.19 * h), (int)(x + 0.38 * w), (int)(y + 1.15 * h));
+        neck.curveTo((int)(x + 0.51 * w), (int)(y + 1.27 * h), (int)(x + 0.7 * w), (int)(y + 1.2 * h), (int)(x + 0.75 * w), (int)(y + 1.1 * h));;
+
+        g.fill(neck);
+
         g.setColor(firstColor);
         g.setStroke(new BasicStroke(2));
         g.drawOval(x, y, w, h);
@@ -65,46 +77,11 @@ public class Saitama{
         eye.curveTo((int)(x + 0.75 * w), (int)(y + 0.42 * h), (int)(x + 0.69 * w), (int)(y + 0.42 * h), (int)(x + 0.68 * w), (int)(y + 0.34 * h));
         eye.curveTo((int)(x + 0.71 * w), (int)(y + 0.33 * h), (int)(x + 0.93 * w), (int)(y + 0.32 * h), (int)(x + 0.93 * w), (int)(y + 0.34 * h));
         g.fill(eye);
-        
-        g.setColor(firstColor);
-        eye.moveTo((int)(x + 0.53 * w), (int)(y + 0.34 * h));
-        eye.curveTo((int)(x + 0.52 * w), (int)(y + 0.37 * h), (int)(x + 0.5 * w), (int)(y + 0.42 * h), (int)(x + 0.4 * w), (int)(y + 0.42 * h));
-        eye.curveTo((int)(x + 0.35 * w), (int)(y + 0.42 * h), (int)(x + 0.29 * w), (int)(y + 0.42 * h), (int)(x + 0.28 * w), (int)(y + 0.34 * h));
-        eye.curveTo((int)(x + 0.31 * w), (int)(y + 0.33 * h), (int)(x + 0.53 * w), (int)(y + 0.32 * h), (int)(x + 0.53 * w), (int)(y + 0.34 * h));
 
-        eye.moveTo((int)(x + 0.93 * w), (int)(y + 0.34 * h));
-        eye.curveTo((int)(x + 0.92 * w), (int)(y + 0.37 * h), (int)(x + 0.9 * w), (int)(y + 0.42 * h), (int)(x + 0.8 * w), (int)(y + 0.42 * h));
-        eye.curveTo((int)(x + 0.75 * w), (int)(y + 0.42 * h), (int)(x + 0.69 * w), (int)(y + 0.42 * h), (int)(x + 0.68 * w), (int)(y + 0.34 * h));
-        eye.curveTo((int)(x + 0.71 * w), (int)(y + 0.33 * h), (int)(x + 0.93 * w), (int)(y + 0.32 * h), (int)(x + 0.93 * w), (int)(y + 0.34 * h));
+        g.setColor(firstColor);
 
         g.fillOval((int)(x + 0.82 * w),(int)(y + 0.35 * h), (int)(w / 10 - 17),(int)(h / 10 - 25));
         g.fillOval((int)(x + 0.42 * w),(int)(y + 0.35 * h),(int)(w / 10 - 17),(int)(h / 10 - 25));
-
-        //Брови
-        eye.moveTo((int)(x + 0.52 * w), (int)(y + 0.3 * h));
-        eye.lineTo((int)(x + 0.29 * w), (int)(y + 0.31 * h));
-
-        eye.moveTo((int)(x + 0.91 * w), (int)(y + 0.31 * h));
-        eye.lineTo((int)(x + 0.7 * w), (int)(y + 0.31 * h));
-        g.draw(eye);
-
-        //Нос
-        GeneralPath smallElements = new GeneralPath();
-        smallElements.moveTo((int)(x + 0.63 * w), (int)(y + 0.4 * h));
-        smallElements.curveTo((int)(x + 0.62 * w), (int)(y + 0.46 * h), (int)(x + 0.68 * w), (int)(y + 0.53 * h), (int)(x + 0.63 * w), (int)(y + 0.56 * h));
-        g.fillOval((int)(x + 0.59 * w),(int)(y + 0.53 * h),(int)(w / 10 - 17),(int)(h / 10 - 25));
-
-        //Рот
-        smallElements.moveTo((int)(x + 0.64 * w), (int)(y + 0.67 * h));
-        smallElements.lineTo((int)(x + 0.54 * w), (int)(y + 0.67 * h));
-
-        //Шея
-        smallElements.moveTo((int)(x + 0.71 * w), (int)(y + 0.96 * h));
-        smallElements.lineTo((int)(x + 0.71 * w), (int)(y + 1.1 * h));
-        smallElements.moveTo((int)(x + 0.31 * w), (int)(y + 0.96 * h));
-        smallElements.lineTo((int)(x + 0.31 * w), (int)(y + 1.1 * h));
-        smallElements.curveTo((int)(x + 0.51 * w), (int)(y + 1.27 * h), (int)(x + 0.7 * w), (int)(y + 1.2 * h), (int)(x + 0.75 * w), (int)(y + 1.1 * h));
-        g.draw(smallElements);
 
         //Заливка плаща
         GeneralPath сloakColor = new GeneralPath();
@@ -265,6 +242,39 @@ public class Saitama{
 
         stroke.moveTo((int)(x + 0.91 * w), (int)(y + 1.38 * h));
         stroke.curveTo((int)(x + 0.95 * w), (int)(y + 1.33 * h), (int)(x + 0.94 * w), (int)(y + 1.31 * h), (int)(x + 0.99 * w), (int)(y + 1.29 * h));
+
+        //Обводка глаз + брови
+        stroke.moveTo((int)(x + 0.53 * w), (int)(y + 0.34 * h));
+        stroke.curveTo((int)(x + 0.52 * w), (int)(y + 0.37 * h), (int)(x + 0.5 * w), (int)(y + 0.42 * h), (int)(x + 0.4 * w), (int)(y + 0.42 * h));
+        stroke.curveTo((int)(x + 0.35 * w), (int)(y + 0.42 * h), (int)(x + 0.29 * w), (int)(y + 0.42 * h), (int)(x + 0.28 * w), (int)(y + 0.34 * h));
+        stroke.curveTo((int)(x + 0.31 * w), (int)(y + 0.33 * h), (int)(x + 0.53 * w), (int)(y + 0.32 * h), (int)(x + 0.53 * w), (int)(y + 0.34 * h));
+
+        stroke.moveTo((int)(x + 0.93 * w), (int)(y + 0.34 * h));
+        stroke.curveTo((int)(x + 0.92 * w), (int)(y + 0.37 * h), (int)(x + 0.9 * w), (int)(y + 0.42 * h), (int)(x + 0.8 * w), (int)(y + 0.42 * h));
+        stroke.curveTo((int)(x + 0.75 * w), (int)(y + 0.42 * h), (int)(x + 0.69 * w), (int)(y + 0.42 * h), (int)(x + 0.68 * w), (int)(y + 0.34 * h));
+        stroke.curveTo((int)(x + 0.71 * w), (int)(y + 0.33 * h), (int)(x + 0.93 * w), (int)(y + 0.32 * h), (int)(x + 0.93 * w), (int)(y + 0.34 * h));
+
+        stroke.moveTo((int)(x + 0.52 * w), (int)(y + 0.3 * h));
+        stroke.lineTo((int)(x + 0.29 * w), (int)(y + 0.31 * h));
+
+        stroke.moveTo((int)(x + 0.91 * w), (int)(y + 0.31 * h));
+        stroke.lineTo((int)(x + 0.7 * w), (int)(y + 0.31 * h));
+        g.draw(stroke);
+
+        //Нос
+        stroke.moveTo((int)(x + 0.63 * w), (int)(y + 0.4 * h));
+        stroke.curveTo((int)(x + 0.62 * w), (int)(y + 0.46 * h), (int)(x + 0.68 * w), (int)(y + 0.53 * h), (int)(x + 0.63 * w), (int)(y + 0.56 * h));
+        g.fillOval((int)(x + 0.59 * w),(int)(y + 0.53 * h),(int)(w / 10 - 17),(int)(h / 10 - 25));
+
+        //Рот
+        stroke.moveTo((int)(x + 0.64 * w), (int)(y + 0.67 * h));
+        stroke.lineTo((int)(x + 0.54 * w), (int)(y + 0.67 * h));
+
+        //Шея
+        stroke.moveTo((int)(x + 0.71 * w), (int)(y + 0.96 * h));
+        stroke.lineTo((int)(x + 0.71 * w), (int)(y + 1.1 * h));
+        stroke.moveTo((int)(x + 0.31 * w), (int)(y + 0.96 * h));
+        stroke.lineTo((int)(x + 0.31 * w), (int)(y + 1.1 * h));
 
         g.draw(stroke);
 
