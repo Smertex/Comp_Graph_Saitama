@@ -138,6 +138,35 @@ public class Saitama{
         g.fillOval((int)(x + 0.82 * w),(int)(y + 1.1 * h), (int)(w / 5 - 17),(int)(h / 6 - 25));
         g.fillOval((int)(x + 0.22 * w),(int)(y + 1.17 * h), (int)(w / 5 - 17),(int)(h / 6 - 25));
 
+        //Застежка
+        GeneralPath claps = new GeneralPath();
+
+        g.fillOval((int)(x + 0.54 * w),(int)(y + 1.2 * h), (int)(w / 5 - 17),(int)(h / 6 - 25));
+
+        g.setColor(firstColor);
+
+        g.drawOval((int)(x + 0.54 * w),(int)(y + 1.2 * h), (int)(w / 5 - 17),(int)(h / 6 - 25));
+
+        claps.moveTo((int)(x + 0.56 * w),(int)(y + 1.24 * h));
+        claps.curveTo((int)(x + 0.55 * w),(int)(y + 1.24 * h), (int)(x + 0.55 * w),(int)(y + 1.26 * h), (int)(x + 0.55 * w),(int)(y + 1.28 * h));
+        claps.curveTo((int)(x + 0.53 * w),(int)(y + 1.29 * h), (int)(x + 0.55 * w),(int)(y + 1.33 * h), (int)(x + 0.58 * w),(int)(y + 1.33 * h));
+        claps.curveTo((int)(x + 0.6 * w),(int)(y + 1.33 * h), (int)(x + 0.64 * w),(int)(y + 1.33 * h), (int)(x + 0.63 * w),(int)(y + 1.29 * h));
+        claps.curveTo((int)(x + 0.62 * w),(int)(y + 1.29 * h), (int)(x + 0.66 * w),(int)(y + 1.25 * h), (int)(x + 0.63 * w),(int)(y + 1.24 * h));
+
+        g.setColor(button);
+
+        g.fill(claps);
+
+        //Молния застежки
+        GeneralPath zipper = new GeneralPath();
+
+        zipper.moveTo((int)(x + 0.58 * w),(int)(y + 1.33 * h));
+        zipper.lineTo((int)(x + 0.58 * w),(int)(y + 1.48 * h));
+        zipper.lineTo((int)(x + 0.62 * w),(int)(y + 1.48 * h));
+        zipper.lineTo((int)(x + 0.62 * w),(int)(y + 1.33 * h));
+
+        g.fill(zipper);
+
         //ОБВОДКА
         GeneralPath stroke = new GeneralPath();
         g.setColor(firstColor);
@@ -266,6 +295,33 @@ public class Saitama{
         stroke.lineTo((int)(x + 0.71 * w), (int)(y + 1.1 * h));
         stroke.moveTo((int)(x + 0.31 * w), (int)(y + 0.96 * h));
         stroke.lineTo((int)(x + 0.31 * w), (int)(y + 1.1 * h));
+
+        //Элементы застежки
+
+        stroke.moveTo((int)(x + 0.56 * w),(int)(y + 1.24 * h));
+        stroke.curveTo((int)(x + 0.55 * w),(int)(y + 1.24 * h), (int)(x + 0.55 * w),(int)(y + 1.26 * h), (int)(x + 0.55 * w),(int)(y + 1.28 * h));
+        stroke.curveTo((int)(x + 0.53 * w),(int)(y + 1.29 * h), (int)(x + 0.55 * w),(int)(y + 1.33 * h), (int)(x + 0.58 * w),(int)(y + 1.33 * h));
+        stroke.curveTo((int)(x + 0.6 * w),(int)(y + 1.33 * h), (int)(x + 0.64 * w),(int)(y + 1.33 * h), (int)(x + 0.63 * w),(int)(y + 1.29 * h));
+        stroke.curveTo((int)(x + 0.62 * w),(int)(y + 1.29 * h), (int)(x + 0.66 * w),(int)(y + 1.25 * h), (int)(x + 0.63 * w),(int)(y + 1.24 * h));
+
+        g.drawOval((int)(x + 0.565 * w),(int)(y + 1.22 * h), (int)(w / 7 - 17),(int)(h / 8 - 25));
+        g.fillOval((int)(x + 0.57 * w),(int)(y + 1.28 * h), (int)(w / 9 - 17),(int)(h / 9 - 25));
+
+        //Молния застежки
+
+        stroke.moveTo((int)(x + 0.58 * w),(int)(y + 1.33 * h));
+        stroke.lineTo((int)(x + 0.58 * w),(int)(y + 1.48 * h));
+        stroke.lineTo((int)(x + 0.62 * w),(int)(y + 1.48 * h));
+        stroke.lineTo((int)(x + 0.62 * w),(int)(y + 1.33 * h));
+
+        for(double i = 1.33; i < 1.48; i += 0.02){
+            stroke.moveTo((int)(x + 0.58 * w),(int)(y + i * h));
+            stroke.lineTo((int)(x + 0.62 * w),(int)(y + i * h));
+        }
+
+        //Тени
+
+
 
         g.draw(stroke);
     }
