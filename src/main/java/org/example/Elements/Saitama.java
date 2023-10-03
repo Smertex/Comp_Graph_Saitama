@@ -2,6 +2,7 @@ package org.example.Elements;
 
 import java.awt.*;
 import java.awt.geom.GeneralPath;
+import java.util.Random;
 
 public class Saitama{
     private int x;
@@ -69,33 +70,33 @@ public class Saitama{
         g.fillOval((int)(x + 0.42 * w),(int)(y + 0.35 * h),(int)(w / 10 - 17),(int)(h / 10 - 25));
 
         //Заливка плаща
-        GeneralPath сloakColor = new GeneralPath();
+        GeneralPath cloakColor = new GeneralPath();
         g.setColor(Color.WHITE);
 
-        сloakColor.moveTo((int)(x + 0.31 * w), (int)(y + 1.04 * h));
-        сloakColor.curveTo((int)(x + 0.23 * w), (int)(y + 1.05 * h), (int)(x + 0.24 * w), (int)(y + 1.06 * h), (int)(x + 0.24 * w), (int)(y + 1.09 * h));
-        сloakColor.curveTo((int)(x + 0.15 * w), (int)(y + 1.09 * h), (int)(x + 0.15 * w), (int)(y + 1.09 * h), (int)(x + 0.12 * w), (int)(y + 1.13 * h));
-        сloakColor.curveTo((int)(x + 0.04 * w), (int)(y + 1.13 * h), (int)(x + 0.04 * w), (int)(y + 1.13 * h), (int)(x + 0.01 * w), (int)(y + 1.15 * h));
-        сloakColor.curveTo((int)(x + 0.04 * w), (int)(y + 1.13 * h), (int)(x + 0.04 * w), (int)(y + 1.13 * h), (int)(x + 0.01 * w), (int)(y + 1.15 * h));
-        сloakColor.curveTo((int)(x + -0.05 * w), (int)(y + 1.15 * h), (int)(x + -0.05 * w), (int)(y + 1.15 * h), (int)(x + -0.08 * w), (int)(y + 1.18 * h));
-        сloakColor.lineTo((int)(x + -0.3 * w), (int)(y + 1.47 * h));
-        сloakColor.lineTo((int)(x + 0.31 * w), (int)(y + 1.47 * h)); // для окраски
-        сloakColor.lineTo((int)(x + 0.31 * w), (int)(y + 1.04 * h)); // для окраски
-        g.fill(сloakColor);
+        cloakColor.moveTo((int)(x + 0.31 * w), (int)(y + 1.04 * h));
+        cloakColor.curveTo((int)(x + 0.23 * w), (int)(y + 1.05 * h), (int)(x + 0.24 * w), (int)(y + 1.06 * h), (int)(x + 0.24 * w), (int)(y + 1.09 * h));
+        cloakColor.curveTo((int)(x + 0.15 * w), (int)(y + 1.09 * h), (int)(x + 0.15 * w), (int)(y + 1.09 * h), (int)(x + 0.12 * w), (int)(y + 1.13 * h));
+        cloakColor.curveTo((int)(x + 0.04 * w), (int)(y + 1.13 * h), (int)(x + 0.04 * w), (int)(y + 1.13 * h), (int)(x + 0.01 * w), (int)(y + 1.15 * h));
+        cloakColor.curveTo((int)(x + 0.04 * w), (int)(y + 1.13 * h), (int)(x + 0.04 * w), (int)(y + 1.13 * h), (int)(x + 0.01 * w), (int)(y + 1.15 * h));
+        cloakColor.curveTo((int)(x + -0.05 * w), (int)(y + 1.15 * h), (int)(x + -0.05 * w), (int)(y + 1.15 * h), (int)(x + -0.08 * w), (int)(y + 1.18 * h));
+        cloakColor.lineTo((int)(x + -0.3 * w), (int)(y + 1.47 * h));
+        cloakColor.lineTo((int)(x + 0.31 * w), (int)(y + 1.47 * h)); // для окраски
+        cloakColor.lineTo((int)(x + 0.31 * w), (int)(y + 1.04 * h)); // для окраски
+        g.fill(cloakColor);
 
-        сloakColor.moveTo((int)(x + 0.31 * w), (int)(y + 1.1 * h));
-        сloakColor.curveTo((int)(x + 0.41 * w), (int)(y + 1.15 * h), (int)(x + 0.45 * w), (int)(y + 1.24 * h), (int)(x + 0.39 * w), (int)(y + 1.27 * h));
-        сloakColor.curveTo((int)(x + 0.19 * w), (int)(y + 1.29 * h), (int)(x + 0.19 * w), (int)(y + 1.29 * h), (int)(x + 0.19 * w), (int)(y + 1.29 * h));
-        сloakColor.curveTo((int)(x + -0.05 * w), (int)(y + 1.16 * h), (int)(x + -0.01 * w), (int)(y + 1.16 * h), (int)(x + -0.08 * w), (int)(y + 1.18 * h));
+        cloakColor.moveTo((int)(x + 0.31 * w), (int)(y + 1.1 * h));
+        cloakColor.curveTo((int)(x + 0.41 * w), (int)(y + 1.15 * h), (int)(x + 0.45 * w), (int)(y + 1.24 * h), (int)(x + 0.39 * w), (int)(y + 1.27 * h));
+        cloakColor.curveTo((int)(x + 0.19 * w), (int)(y + 1.29 * h), (int)(x + 0.19 * w), (int)(y + 1.29 * h), (int)(x + 0.19 * w), (int)(y + 1.29 * h));
+        cloakColor.curveTo((int)(x + -0.05 * w), (int)(y + 1.16 * h), (int)(x + -0.01 * w), (int)(y + 1.16 * h), (int)(x + -0.08 * w), (int)(y + 1.18 * h));
 
-        сloakColor.moveTo((int)(x + 0.71 * w), (int)(y + 1.01 * h));
-        сloakColor.curveTo((int)(x + 0.79 * w), (int)(y + 1.01 * h), (int)(x + 0.79 * w), (int)(y + 1.04 * h), (int)(x + 0.81 * w), (int)(y + 1.04 * h));
-        сloakColor.curveTo((int)(x + 0.84 * w), (int)(y + 1.02 * h), (int)(x + 0.86 * w), (int)(y + 1.02 * h), (int)(x + 0.9 * w), (int)(y + 1.05 * h));
-        сloakColor.curveTo((int)(x + 0.95 * w), (int)(y + 1.05 * h), (int)(x + 0.96 * w), (int)(y + 1.08 * h), (int)(x + 0.98 * w), (int)(y + 1.09 * h));
-        сloakColor.curveTo((int)(x + 1.03 * w), (int)(y + 1.09 * h), (int)(x + 1.04 * w), (int)(y + 1.1 * h), (int)(x + 1.05 * w), (int)(y + 1.14 * h));
-        сloakColor.curveTo((int)(x + 1.02 * w), (int)(y + 1.21 * h), (int)(x + 0.9 * w), (int)(y + 1.22 * h), (int)(x + 0.9 * w), (int)(y + 1.22 * h));
-        сloakColor.curveTo((int)(x + 0.8 * w), (int)(y + 1.19 * h), (int)(x + 0.76 * w), (int)(y + 1.16 * h), (int)(x + 0.71 * w), (int)(y + 1.08 * h));
-        g.fill(сloakColor);
+        cloakColor.moveTo((int)(x + 0.71 * w), (int)(y + 1.01 * h));
+        cloakColor.curveTo((int)(x + 0.79 * w), (int)(y + 1.01 * h), (int)(x + 0.79 * w), (int)(y + 1.04 * h), (int)(x + 0.81 * w), (int)(y + 1.04 * h));
+        cloakColor.curveTo((int)(x + 0.84 * w), (int)(y + 1.02 * h), (int)(x + 0.86 * w), (int)(y + 1.02 * h), (int)(x + 0.9 * w), (int)(y + 1.05 * h));
+        cloakColor.curveTo((int)(x + 0.95 * w), (int)(y + 1.05 * h), (int)(x + 0.96 * w), (int)(y + 1.08 * h), (int)(x + 0.98 * w), (int)(y + 1.09 * h));
+        cloakColor.curveTo((int)(x + 1.03 * w), (int)(y + 1.09 * h), (int)(x + 1.04 * w), (int)(y + 1.1 * h), (int)(x + 1.05 * w), (int)(y + 1.14 * h));
+        cloakColor.curveTo((int)(x + 1.02 * w), (int)(y + 1.21 * h), (int)(x + 0.9 * w), (int)(y + 1.22 * h), (int)(x + 0.9 * w), (int)(y + 1.22 * h));
+        cloakColor.curveTo((int)(x + 0.8 * w), (int)(y + 1.19 * h), (int)(x + 0.76 * w), (int)(y + 1.16 * h), (int)(x + 0.71 * w), (int)(y + 1.08 * h));
+        g.fill(cloakColor);
 
        //Заливка тела
        GeneralPath colorBody = new GeneralPath();
@@ -318,10 +319,6 @@ public class Saitama{
             stroke.moveTo((int)(x + 0.58 * w),(int)(y + i * h));
             stroke.lineTo((int)(x + 0.62 * w),(int)(y + i * h));
         }
-
-        //Тени
-
-
 
         g.draw(stroke);
     }

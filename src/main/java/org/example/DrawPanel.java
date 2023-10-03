@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.Elements.Background;
 import org.example.Elements.Saitama;
 
 import javax.swing.*;
@@ -14,7 +15,11 @@ public class DrawPanel extends JPanel {
         super.paint(gr);
         Graphics2D g = (Graphics2D) gr;
 
+        Background background = new Background();
+        background.drawBackground(g);
+
         Saitama saitama = new Saitama(220,120,220,300);
         saitama.drawSaitama(g);
+
     }
 }
