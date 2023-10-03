@@ -10,12 +10,13 @@ import java.awt.*;
 public class DrawPanel extends JPanel {
     private Saitama saitama;
     private Background background;
-    private Stones st1, st2, st3;
+    //private Stones st1, st2, st3;
+    private int xStone = 800;
 
     public DrawPanel(){
         background = new Background();
         saitama = new Saitama(220,120,220,300);
-        //st1 = new Stones(100, 100);
+        //st1 = new Stones(xStone, 100);
     }
     @Override
     public void paint(Graphics gr){
@@ -26,4 +27,5 @@ public class DrawPanel extends JPanel {
         saitama.drawSaitama(g);
         //st1.drawStones(g);
     }
+
 }
