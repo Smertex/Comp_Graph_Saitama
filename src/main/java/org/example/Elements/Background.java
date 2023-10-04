@@ -100,18 +100,6 @@ public class Background {
 
         g.drawLine(220,40,580,40);
 
-        //Провода
-        g.setStroke(new BasicStroke(5));
-
-        g.setColor(Color.RED);
-        g.drawArc(600,-123, 400,250, -90,-90);
-        g.setColor(Color.YELLOW);
-        g.drawArc(550,-134, 400,250, -80,-95);
-        g.setColor(Color.MAGENTA);
-        g.drawArc(570,-134, 200,250, -5,-176);
-        g.setColor(Color.GREEN);
-        g.drawArc(585,-134, 250,250, -5,-176);
-
         g.setColor(firstColor);
     }
 

@@ -2,7 +2,6 @@ package org.example.Elements;
 
 import java.awt.*;
 import java.awt.geom.GeneralPath;
-import java.util.Random;
 
 public class Saitama{
     private int x;
