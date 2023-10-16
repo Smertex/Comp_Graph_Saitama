@@ -10,13 +10,17 @@ import java.awt.*;
 public class DrawPanel extends JPanel {
     private Saitama saitama;
     private Background background;
-    private Wires wires;
+    private Wires[] wires = new Wires[10];
+
 
     public DrawPanel(){
         background = new Background();
         saitama = new Saitama(220,120,220,300);
 
-        wires = new Wires(600, -123);
+        for(int i = 0, j = 600; i < 10; i++, j -= 90){
+            wires[i] = new Wires(j, -123);
+        }
+
     }
     @Override
     public void paint(Graphics gr){
@@ -25,7 +29,8 @@ public class DrawPanel extends JPanel {
 
         background.drawBackground(g);
         saitama.drawSaitama(g);
-        wires.drawWires(g);
+
+         wires[0].drawWires(g);
     }
 
 
