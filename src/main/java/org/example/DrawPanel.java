@@ -7,13 +7,14 @@ import org.example.Elements.Wires;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Random;
 
 public class DrawPanel extends JPanel {
     private Saitama saitama;
     private Background background;
     private Wires[] wires = new Wires[10];
     private Stones stones;
-
+    private int x = 800;
 
     public DrawPanel(){
         background = new Background();
@@ -22,9 +23,6 @@ public class DrawPanel extends JPanel {
         for(int i = 0, j = 600; i < 10; i++, j -= 90){
             wires[i] = new Wires(j, -123);
         }
-
-        stones = new Stones(100,100);
-
     }
     @Override
     public void paint(Graphics gr){
@@ -35,9 +33,29 @@ public class DrawPanel extends JPanel {
         saitama.drawSaitama(g);
 
         wires[0].drawWires(g);
-        stones.drawStones(g);
+
+        flyStone();
+        stones = new Stones(x,randomY());
+        stones.drawStones(g, randomStone());
+
+        repaint();
     }
 
-
+    private int randomStone(){
+        Random rand = new Random();
+        return rand.nextInt(3);
+    }
+    private int randomY(){
+        Random rand = new Random();
+        return rand.nextInt(600);
+    }
+    private void flyStone(){
+        if(x != 0){
+            x -= 5;
+        }
+        else{
+            x = 800;
+        }
+    }
 
 }

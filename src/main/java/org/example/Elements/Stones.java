@@ -2,7 +2,6 @@ package org.example.Elements;
 
 import java.awt.*;
 import java.awt.geom.GeneralPath;
-import java.util.Random;
 
 public class Stones {
     private int x;
@@ -12,10 +11,16 @@ public class Stones {
         setY(y);
     }
 
-    public void drawStones(Graphics2D g) {
-        //stone1(g);
-        //stone2(g);
-        stone3(g);
+    public void drawStones(Graphics2D g, int check) {
+        if(check == 0){
+            stone1(g);
+        }
+        else if(check == 1){
+            stone2(g);
+        }
+        else if(check == 2){
+            stone3(g);
+        }
     }
 
     private void setX(int x){
