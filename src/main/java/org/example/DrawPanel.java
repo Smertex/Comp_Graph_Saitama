@@ -14,8 +14,9 @@ public class DrawPanel extends JPanel {
     private Background background;
     private Wires[] wires = new Wires[10];
     private Stones stones;
-    private int x = 800;
-
+    private int stoneX = 800;
+    private int stoneY = 500;
+    private int stoneRand = 0;
     public DrawPanel(){
         background = new Background();
         saitama = new Saitama(220,120,220,300);
@@ -34,28 +35,23 @@ public class DrawPanel extends JPanel {
 
         wires[0].drawWires(g);
 
-        flyStone();
-        stones = new Stones(x,randomY());
-        stones.drawStones(g, randomStone());
+        flyStone(g);
 
         repaint();
     }
+    private void flyStone(Graphics2D g){
+        Random rand = new Random();
 
-    private int randomStone(){
-        Random rand = new Random();
-        return rand.nextInt(3);
-    }
-    private int randomY(){
-        Random rand = new Random();
-        return rand.nextInt(600);
-    }
-    private void flyStone(){
-        if(x != 0){
-            x -= 5;
+        stones = new Stones(stoneX, stoneY);
+        stones.drawStones(g, stoneRand);
+
+        if(stoneX != -50){
+            stoneX -= 5;
         }
         else{
-            x = 800;
+            stoneX = 800;
+            stoneY = rand.nextInt(600);
+            stoneRand = rand.nextInt(3);
         }
     }
-
 }
