@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.Elements.Background;
 import org.example.Elements.Saitama;
+import org.example.Elements.Stones;
 import org.example.Elements.Wires;
 
 import javax.swing.*;
@@ -11,6 +12,7 @@ public class DrawPanel extends JPanel {
     private Saitama saitama;
     private Background background;
     private Wires[] wires = new Wires[10];
+    private Stones stones;
 
 
     public DrawPanel(){
@@ -21,6 +23,8 @@ public class DrawPanel extends JPanel {
             wires[i] = new Wires(j, -123);
         }
 
+        stones = new Stones(100,100);
+
     }
     @Override
     public void paint(Graphics gr){
@@ -30,7 +34,8 @@ public class DrawPanel extends JPanel {
         background.drawBackground(g);
         saitama.drawSaitama(g);
 
-         wires[0].drawWires(g);
+        wires[0].drawWires(g);
+        stones.drawStones(g);
     }
 
 

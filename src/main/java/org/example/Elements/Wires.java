@@ -13,6 +13,7 @@ public class Wires {
 
     public void drawWires(Graphics2D g){
         Color firstColor = g.getColor();
+        Stroke firstStroke = g.getStroke();
         g.setStroke(new BasicStroke(5));
 
         g.setColor(Color.RED);
@@ -25,6 +26,7 @@ public class Wires {
         g.drawArc(x - 15,y - 11, 250,250, -5,-176);
 
         g.setColor(firstColor);
+        g.setStroke(firstStroke);
     }
 
     private void setX(int x){
