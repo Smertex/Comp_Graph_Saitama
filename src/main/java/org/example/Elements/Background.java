@@ -8,7 +8,6 @@ public class Background {
     public void drawBackground(Graphics2D g){
         BasicStroke firstStroke = (BasicStroke) g.getStroke();
         Color firstColor = g.getColor();
-        Font firstFont = g.getFont();
 
         //Стена и Пол
         g.setColor(new Color(40, 84, 157));

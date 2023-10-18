@@ -5,12 +5,10 @@ import java.awt.*;
 public class Wires {
     private int x;
     private int y;
-
     public Wires(int x, int y) {
         setX(x);
         setY(y);
     }
-
     public void drawWires(Graphics2D g){
         Color firstColor = g.getColor();
         Stroke firstStroke = g.getStroke();

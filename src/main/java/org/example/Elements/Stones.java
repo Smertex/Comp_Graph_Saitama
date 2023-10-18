@@ -2,23 +2,26 @@ package org.example.Elements;
 
 import java.awt.*;
 import java.awt.geom.GeneralPath;
+import java.util.Random;
 
 public class Stones {
     private int x;
     private int y;
+    private int swapStone;
     public Stones(int x, int y) {
         setX(x);
         setY(y);
     }
 
-    public void drawStones(Graphics2D g, int check) {
-        if(check == 0){
+    public void drawStones(Graphics2D g) {
+        flyStone();
+        if(this.swapStone == 0){
             stone1(g);
         }
-        else if(check == 1){
+        else if(this.swapStone == 1){
             stone2(g);
         }
-        else if(check == 2){
+        else if(this.swapStone == 2){
             stone3(g);
         }
     }
@@ -60,6 +63,17 @@ public class Stones {
         stone.lineTo(x + 30, y - 10);
         stone.lineTo(x,y);
         g.fill(stone);
+    }
+    private void flyStone(){
+        Random rand = new Random();
+        if(this.x != -50){
+            this.x -= 5;
+        }
+        else{
+            this.x = 800;
+            this.y = rand.nextInt(600);
+            this.swapStone = rand.nextInt(3);
+        }
     }
 
 
